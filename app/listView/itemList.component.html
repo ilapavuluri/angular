@@ -1,0 +1,28 @@
+  <h2>Menu List:</h2>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" [ngClass]="{'active': selectedItem == menu}" *ngFor="let menu of menuItems" (click)="onSelect(menu)">
+      <span class="badge">{{menu.id}}</span> {{menu.name}}
+    </li>
+  </ul>
+</div>
+
+<div class="container center" *ngIf="selectedItem">
+  <h2>{{ selectedItem.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedItem.id}}</div>
+  <div>
+      <span>name: </span>{{selectedItem.name}}
+  </div>
+  <div>
+      <span>cost: </span>{{selectedItem.cost}}
+  </div>
+  <div>
+      <span>description: </span>{{selectedItem.description}}
+  </div>
+  <div>
+      <label>quantity:
+        <input [(ngModel)]="selectedItem.quantity" placeholder="1">
+      </label>
+      <button aria-label="order" (click)="createOrder()">Order</button>
+    </div>
+</div>

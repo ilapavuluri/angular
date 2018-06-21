@@ -1,0 +1,39 @@
+  <h2>Order List:</h2>
+<!--ul>
+  <li *ngFor="let order of orderList">
+    <span class="badge">{{order.id}}</span> 
+    <span class="badge">{{order.customer.name}}</span>
+    <span class="badge">{{order.customer.description}}</span>
+    <span class="badge">{{order.item.name}}</span>
+    <span class="badge">{{order.item.description}}</span>
+    <span class="badge">{{order.quantity}}</span>
+  </li>
+</ul-->
+
+<div class="container">
+    <div class="table-responsive">          
+        <table class="table">
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Id</th>
+                  <th>CustomerName</th>
+                  <th>CustomerDescription</th>
+                  <th>ItemName</th>
+                  <th>ItemDescription</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orderList">
+                <td >{{order.id}}</td>
+                <td >{{order.customer.name}}</td>
+                <td >{{order.customer.description}}</td>
+                <td >{{order.item.name}}</td>
+                <td >{{order.item.description}}</td>
+                <td >{{order.quantity}}</td>
+              </tr>
+              </tbody>
+        </table>
+    </div>
+</div>
